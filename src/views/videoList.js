@@ -1,16 +1,19 @@
 var VideoListView = Backbone.View.extend({
 
-  initialize: function() {
-    this.render();
-    this.collection.models.forEach(function(video) {
-      video.render();
-    })
+  el: '.list',
 
+  initialize: function() {
+    // this.collection.models.forEach(function(video) {``
+    //   new VideoListEntryView({model: video});
+    // })
+    this.render();
   },
 
   render: function() {
+    console.log(this.template());
+
     this.$el.children().detach(); //removing all elements from the dom
-    this.$el.html(this.template(this.collection.model)); //repost everything from template into dom
+    this.$el.html(this.template()); //repost everything from template into dom
     //console.log(this.template(this.collection.model));
     return this;
   },
