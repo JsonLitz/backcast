@@ -5,8 +5,8 @@ describe('VideoListView', function() {
     sinon.spy(VideoListView.prototype, 'render');
     sinon.spy(VideoListEntryView.prototype, 'render');
 
-    collection = new Videos(fakeVideoData);
-    view = new VideoListView({ collection: collection });
+    collection = new Videos(fakeVideoData);//array found in collections.js populated with fake video data from
+    view = new VideoListView({ collection: collection });// this is from views/videoListEntry.js
   });
 
   afterEach(function() {
