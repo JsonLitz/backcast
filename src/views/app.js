@@ -4,12 +4,14 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos();
-    this.render()
+    this.render();
   },
 
 
   render: function() {
     this.$el.html(this.template());
+    new VideoListView();
+    new VideoPlayer();
     return this;
   },
 
@@ -17,4 +19,4 @@ var AppView = Backbone.View.extend({
 
 });
 
-console.log('Hello from app.js')
+console.log('Hello from app.js');
